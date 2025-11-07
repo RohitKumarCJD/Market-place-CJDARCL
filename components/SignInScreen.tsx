@@ -38,7 +38,7 @@ const CARD_MARGIN = 10;
 
 const SignInScreen = () => {
   const scrollRef = useRef<ScrollView>(null);
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [_currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -514,6 +514,10 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.5,
     shadowRadius: 3.07,
     elevation: 3,
+  },
+
+  partnerCardMarginLeft: {
+    marginLeft: 10,
   },
 
   partnerInner: {

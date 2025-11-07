@@ -7,18 +7,20 @@ import SignupScreen from './components/SignUpScreen';
 import SplashScreen from './components/SplashScreen';
 import SignInScreen from './components/SignInScreen';
 
+import { StyleSheet } from 'react-native';
+
 export type RootStackParamList = {
   Splash: undefined;
   Onboarding: undefined;
   Signup: undefined;
-  SignInScreen: undefined;
+  Signin: undefined;
 };
 
 const Stack = createStackNavigator<RootStackParamList>();
 
 export default function App() {
   return (
-    <GestureHandlerRootView style={{ flex: 1 }}>
+    <GestureHandlerRootView style={styles.container}>
       <NavigationContainer>
         <Stack.Navigator screenOptions={{ headerShown: false }} >
           <Stack.Screen name="Splash" component={SplashScreen} />
@@ -30,3 +32,9 @@ export default function App() {
     </GestureHandlerRootView>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+});
